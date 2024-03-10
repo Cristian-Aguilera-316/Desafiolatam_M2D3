@@ -1,0 +1,210 @@
+body {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    grid-template-areas:
+        "menu" 
+        "buscador" 
+        "contenido" 
+        "fin";
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 100px calc(100vh - 80px - 100px - 80px) 80px;
+    
+}
+
+.nav1 {
+    grid-area: menu;
+    background-color: rgba(21, 21, 187, 0.922);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 1rem;
+    font-size: 1.5rem;
+}
+
+.menu-btn {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding-right: 2rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.menu-btn:hover {
+    color: gray;
+}
+
+.menu-list {
+    display: none;
+}
+.search {
+    grid-area: buscador;
+    background-color: rgb(216, 213, 213);
+    text-align: center;
+    color: black;
+    font-size: rem;
+}
+
+.select select {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.dashboard {
+    grid-area: contenido;
+    background-color: rgb(255, 255, 255);
+        
+    overflow-y: auto;
+    padding-top: 2rem;
+}
+
+.col1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.card {
+    width: 300px;
+    border: 1px solid rgb(182, 182, 182);
+}
+
+.card-title {
+    color: black;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.card-body {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.btn-card {
+    background-color: rgba(21, 21, 187, 0.922);
+    color: white;
+    padding: 0.3rem;
+    border: 1px solid rgba(21, 21, 187, 0.922);
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.paginacion {
+    background-color: white;
+   
+}
+
+.paginacion ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.paginacion ul li {
+    margin-right: 10px;
+}
+
+.paginacion ul li:last-child {
+    margin-right: 0;
+}
+
+.paginacion ul li a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+}
+
+.paginacion ul li a:hover {
+    background-color: #1832f5;
+    color: white;
+}
+
+footer {
+    grid-area: fin;
+    background-color: rgb(25, 24, 114);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    body {
+        grid-template-areas:
+            "menu menu"
+            "buscador contenido"
+            "fin fin";
+        grid-template-columns: 200px calc(100vw - 200px);
+        grid-template-rows: 60px calc(100vh - 60px - 80px) 80px;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    .menu-list {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        justify-content: end;
+        align-items: center;
+        gap: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .col1 {
+        display: grid ;
+        grid-template-columns: 1fr 1fr;
+        padding-left: 3rem;
+    }
+}
+
+@media (min-width: 992px) {
+    body {
+        grid-template-areas:
+        "menu buscador"
+        "menu contenido"
+        "fin contenido";
+        grid-template-columns: 200px calc(100vw - 200px);
+        grid-template-rows: 100px calc(100vh - 100px - 100px) 100px;
+        min-height: 100vh;
+    }
+
+    .nav1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        padding-right: 1rem;
+    } 
+
+    .menu-list {
+        padding-top: 3rem;
+        flex-direction: column;
+    } 
+
+    .col1 {
+        display: grid ;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding-left: 3rem;
+    }
+}
